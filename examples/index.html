@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>mg-select example</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.11.0/metricsgraphics.min.css" rel="stylesheet">
+  <link href="../mg-select.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.11.0/metricsgraphics.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+  <script src="../mg-select.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class='row trunk-section'>
+    <div class='col-sm-2'></div>
+    <div class='col-sm-8 text-center' id='fake_users2'></div>
+    <div class='col-sm-2'></div>
+  </div>
+</div>
+<script>
+d3.json('data/fake.json', function(data) {
+  data = MG.convert.date(data, 'date');
+
+  MG.data_graphic({
+    title: "Multi-Line Chart",
+    description: "This line chart contains multiple lines.",
+    data: data,
+    width: 600,
+    height: 200,
+    right: 40,
+    target: '#fake_users2',
+    y_accessor: ['line_1','line_2','line_3'],
+    legend: ['line_1','line_2','line_3'],
+    legend_target: '.legend'
+  });
+});
+</script>
+</body>
+</html>
