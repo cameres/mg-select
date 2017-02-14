@@ -2,7 +2,7 @@
 mg-select is an addon built for mozilla's metrics graphics in order to allow users to dynamically select `y_accessors` for line charts.
 While working with on crash report projects, we wanted to be able to directly compare two of the potentially numerous `y_accessors` that we were graphing.
 
-![mg-select.gif](mg-select gif)
+![mg-select.gif](mg-select.gif)
 
 ## Dependencies
 mg-select requires the following libraries to be installed...
