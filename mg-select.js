@@ -41,6 +41,7 @@ MG.add_hook('global.before_init', function(args){
       chart_properties.chart_type = "line";
     }
 
+    chart_properties.legend = y_accessors;
     chart_properties.y_accessor = y_accessors;
     chart_properties.data = original_data;
     MG.data_graphic(chart_properties);
