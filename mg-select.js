@@ -1,7 +1,8 @@
 MG.add_hook('global.before_init', function(args){
+  // if select: true isn't in args or...
   // if a selector has already been created,
-  // do not create another selector or copy args
-  if($(args.target + " select").length != 0)
+  // create selector or copy args
+  if((!args.mg_select == true) || $(args.target + " select").length != 0)
     return;
 
   // initial call to the chart hook
